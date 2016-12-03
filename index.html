@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="css/img/www.ico.la_ffdd5abccd027b9c95973e9bc50544ae_64X64.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <title>僵尸漫步</title>
+        <style>
+    </style>
+</head>
+
+<body>
+    <div id="can1"></div>
+    <div id="main">
+        <div id="street">
+            <div id="map">
+                <ul id="sky">
+                    <div class='PeaArm'></div>
+                    <div class='PeaArm-up'></div>
+                </ul>
+            </div>
+            <div id="zombie"></div>
+            <ul id="earth"></ul>
+            <div id="start"></div>
+            <div class="player">
+                <li id="player1"></li>
+                <li id="player2"></li>
+                <li id="player3"></li>
+                <li id="player4"></li>
+            </div>
+            <div id="pausebtn">
+                <img src="img/pause.png" alt="">
+                <span id='pausebtn-start' class="start"></span>
+                <span id='pausebtn-restart' class="restart"></span>
+                <span id='pausebtn-voice' class="voice"></span>
+            </div>
+        </div>
+        <ul id="ico">
+            <li class="voice"></li>
+            <li class="start"></li>
+            <li class="restart"></li>
+        </ul>
+        <audio id="bgm" src="mp3/bgm.mp3" autoplay loop style="display:none"></audio>
+        <div id="footimg">
+            <p class="foot1"></p>
+            <p class="foot2"></p>
+        </div>
+    </div>
+    <div id="TransPage"><img src="img/xzfk.gif" alt=""></div>
+</body>
+
+</html>
+<script src="js/move.js"></script>
+<script src="js/js.js"></script>
+<script>
+window.onload=function () {
+    var TransPage = document.getElementById('TransPage');
+    // 页面被刷新时,白雾退散
+    setTimeout(function() {
+        move(TransPage, { opacity: 0 }, 1000, 'linear', null, function() {
+            TransPage.style.display = 'none';
+        });
+    }, 500);
+};
+</script>
